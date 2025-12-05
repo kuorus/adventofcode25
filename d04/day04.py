@@ -46,7 +46,10 @@ class Day04:
         for row in range(0, self.map_size_y):
             new_row = ""
             for col in range(0, self.map_size_x):
-                new_row += self.check_reachable_rolls(row, col)
+                if self.map[row][col] == EMPTY:
+                    new_row += EMPTY
+                else:
+                    new_row += self.check_reachable_rolls(row, col)
             new_map.append(new_row)
         
         return new_map 
